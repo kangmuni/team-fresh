@@ -1,19 +1,23 @@
 import { useEffect, useState } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 const Header = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: ${(props) => (props.scroll ? '#0e2138' : 'none')};
+  background-color: ${(props) => (props.scroll ? '#011630' : 'none')};
   opacity: 0.95;
   color: white;
-  padding: 0 440px;
   z-index: 1;
+`;
+
+const Wrapper = styled.div`
+  max-width: 1280px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const Logo = styled.img`
@@ -26,15 +30,14 @@ const Menu = styled.ul`
   padding-left: 0;
   display: flex;
   justify-content: center;
-  width: 100%;
 `;
 
 const List = styled.li`
-  margin: 5px 35px 5px 0;
+  margin: 5px 0 5px 40px;
   padding-bottom: 3px;
   font-size: 20px;
   font-weight: 500;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1.5px solid transparent;
   cursor: pointer;
   &:hover {
     border-color: white;
@@ -61,13 +64,15 @@ const MainHeader = () => {
 
   return (
     <Header scroll={scroll}>
-      <Logo src="/images/logo.png" alt="logo"></Logo>
-      <Menu>
-        <List>회사소개</List>
-        <List>서비스소개</List>
-        <List>인재채용</List>
-        <List>고객지원</List>
-      </Menu>
+      <Wrapper>
+        <Logo src="/images/logo.png" alt="logo"></Logo>
+        <Menu>
+          <List>회사소개</List>
+          <List>서비스소개</List>
+          <List>인재채용</List>
+          <List>고객지원</List>
+        </Menu>
+      </Wrapper>
     </Header>
   );
 };
