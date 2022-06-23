@@ -48,7 +48,7 @@ const Button = styled.li`
   ${(props) =>
     props.active &&
     css`
-      background-color: #0e2138;
+      background-color: #02204b;
       color: white;
     `}
 `;
@@ -80,7 +80,7 @@ const Img = styled.img`
 const MainService = () => {
   return (
     <Service>
-      <Title fontSize="23px" fontWeight="300">
+      <Title fontSize="23px" fontWeight="400">
         Serivce Introduction
       </Title>
       <Title fontSize="62px" fontWeight="900">
@@ -107,14 +107,14 @@ const MainService = () => {
             </Button>
           </Buttons>
           <Description>
-            <Text fontSize="37px" fontWeight="900" color="#0e2138">
+            <Text fontSize="40px" fontWeight="900" color="#02204b">
               상품의 관리,
               <br />
               보관부터 배송까지
               <br />
               완벽하게
             </Text>
-            <Text fontSize="20px" color="grey">
+            <Text fontSize="20px" color="#6d6e70">
               이커머스 운영에 최적화된 풀필먼트 센터와 <br />
               새벽배송망을 보유한 팀프레시의 <br />
               이커머스 전문 물류 서비스를 제공받으세요.

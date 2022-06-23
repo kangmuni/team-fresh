@@ -4,8 +4,6 @@ import styled, { css } from 'styled-components';
 const Business = styled.section`
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 const Background = styled.div`
