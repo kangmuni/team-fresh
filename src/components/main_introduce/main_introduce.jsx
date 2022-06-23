@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 `;
 
 const Text = styled.div`
-  font-size: 35px;
+  font-size: 32px;
   font-weight: bold;
 `;
 

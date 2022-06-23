@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const Header = styled.header`
@@ -44,26 +45,9 @@ const List = styled.li`
   }
 `;
 
-const MainHeader = () => {
-  const [scroll, setScroll] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const handleScroll = () => {
-    if (window.scrollY >= 30) {
-      setScroll(true);
-    } else {
-      setScroll(false);
-    }
-  };
-
+const MainHeader = (scroll) => {
   return (
-    <Header scroll={scroll}>
+    <Header scroll>
       <Wrapper>
         <Logo src="/images/logo.png" alt="logo"></Logo>
         <Menu>
