@@ -3,6 +3,7 @@ import MainImage from './components/main_home/main_home';
 import MainIntroduce from './components/main_introduce/main_introduce';
 import MainHeader from './components/main_header/main_header';
 import MainBusiness from './components/main_business/main_business';
+import MainService from './components/main_service/main_service';
 
 function App() {
   const [scroll, setScroll] = useState(false);
@@ -27,6 +28,7 @@ function App() {
       <MainImage />
       <MainIntroduce />
       <MainBusiness />
+      <MainService />
     </>
   );
 }
