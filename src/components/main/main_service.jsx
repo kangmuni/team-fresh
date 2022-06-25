@@ -45,6 +45,7 @@ const Button = styled.li`
   width: 150px;
   height: 150px;
   background-color: #f5f5f5;
+  cursor: pointer;
   ${(props) =>
     props.active &&
     css`
@@ -87,25 +88,25 @@ const MainService = () => {
         서비스소개
       </Title>
       <Wrapper>
+        <Buttons>
+          <Button active onClick>
+            <Img src="/images/icon03.png"></Img>
+            <div>물류</div>
+          </Button>
+          <Button>
+            <Img src="/images/icon04.png"></Img>
+            <div>유통</div>
+          </Button>
+          <Button>
+            <Img src="/images/icon06.png"></Img>
+            <div>프랜차이즈</div>
+          </Button>
+          <Button>
+            <Img src="/images/icon07.png"></Img>
+            <div>보험</div>
+          </Button>
+        </Buttons>
         <Left>
-          <Buttons>
-            <Button active>
-              <Img src="/images/icon03.png"></Img>
-              <div>물류</div>
-            </Button>
-            <Button>
-              <Img src="/images/icon04.png"></Img>
-              <div>유통</div>
-            </Button>
-            <Button>
-              <Img src="/images/icon06.png"></Img>
-              <div>프랜차이즈</div>
-            </Button>
-            <Button>
-              <Img src="/images/icon07.png"></Img>
-              <div>보험</div>
-            </Button>
-          </Buttons>
           <Description>
             <Text fontSize="40px" fontWeight="900" color="#02204b">
               상품의 관리,

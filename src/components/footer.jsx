@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Footer = styled.footer`
+const Foot = styled.footer`
   background-color: #191919;
   padding: 50px;
 `;
@@ -26,9 +26,9 @@ const Info = styled.div`
 
 const Link = styled.div``;
 
-const MainFooter = () => {
+const Footer = () => {
   return (
-    <Footer>
+    <Foot>
       <Wrapper>
         <Logo src="/images/logo.png"></Logo>
         <Info>
@@ -49,8 +49,8 @@ const MainFooter = () => {
         </Info>
         <Link></Link>
       </Wrapper>
-    </Footer>
+    </Foot>
   );
 };
 
-export default MainFooter;
+export default Footer;

@@ -19,6 +19,7 @@ const Contents = styled.div`
   height: 500px;
   border-radius: 20px;
   margin: 20px;
+  cursor: pointer;
 `;
 
 const Img = styled.img`
@@ -56,7 +57,7 @@ const MainLink = () => {
           <Description>Recruit</Description>
         </Contents>
         <Contents>
-          <Img src="/images/main_service_img03.jpeg"></Img>
+          <Img src="/images/main_service_img04.jpeg"></Img>
           <Description>Timf Story</Description>
         </Contents>
       </Wrapper>

@@ -1,25 +1,28 @@
 import React from 'react';
-import MainImage from './components/main_home/main_home';
-import MainIntroduce from './components/main_introduce/main_introduce';
-import MainHeader from './components/main_header/main_header';
-import MainBusiness from './components/main_business/main_business';
-import MainService from './components/main_service/main_service';
-import MainPoint from './components/main_point/main_point';
-import MainLink from './components/main_link/main_link';
-import MainFooter from './components/main_footer/main_footer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Header from './components/header';
+import Main from './routes/main';
+import MenuCompany from './routes/company';
+import MenuService from './routes/service';
+import MenuRecruit from './routes/recruit';
+import MenuCustomer from './routes/customer';
+import MenuPostcode from './routes/delivery';
+import Footer from './components/footer';
 
 function App() {
   return (
-    <>
-      <MainHeader />
-      <MainImage />
-      <MainIntroduce />
-      <MainBusiness />
-      <MainService />
-      <MainPoint />
-      <MainLink />
-      <MainFooter />
-    </>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Main />}></Route>
+        <Route path="/company" element={<MenuCompany />}></Route>
+        <Route path="/service" element={<MenuService />}></Route>
+        <Route path="/recruit" element={<MenuRecruit />}></Route>
+        <Route path="/customer" element={<MenuCustomer />}></Route>
+        <Route path="/delivery" element={<MenuPostcode />}></Route>
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
