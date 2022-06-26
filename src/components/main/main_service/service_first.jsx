@@ -1,6 +1,35 @@
 import React from 'react';
+import styled, { css } from 'styled-components';
 
-const serviceFirst = (props) => {
+const Left = styled.div`
+  display: flex;
+`;
+
+const Description = styled.div`
+  align-self: center;
+`;
+
+const Text = styled.div`
+  font-size: ${(props) => props.fontSize};
+  font-weight: ${(props) => props.fontWeight};
+  color: ${(props) => props.color};
+  padding-top: 40px;
+  padding-left: 20px;
+`;
+
+const Right = styled.div``;
+
+const Img = styled.img`
+  width: 80px;
+  ${(props) =>
+    props.pic &&
+    css`
+      width: 690px;
+      height: 700px;
+    `}
+`;
+
+const ServiceFirst = (props) => {
   return (
     <>
       <Left>
@@ -26,4 +55,4 @@ const serviceFirst = (props) => {
   );
 };
 
-export default serviceFirst;
+export default ServiceFirst;

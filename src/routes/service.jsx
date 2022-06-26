@@ -1,5 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const MenuService = () => <h1></h1>;
+const Section = styled.section`
+  width: 100vw;
+  height: 100vh;
+`;
+
+const MenuService = () => <Section></Section>;
 
 export default MenuService;

@@ -52,6 +52,7 @@ const List = styled.li`
   font-size: 20px;
   font-weight: 500;
   padding-bottom: 5px;
+
   &:after {
     content: '';
     position: absolute;

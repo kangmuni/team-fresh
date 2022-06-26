@@ -6,8 +6,9 @@ const Point = styled.section`
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  height: 100vh;
-  background: linear-gradient(white 65%, #f4f4f4 35%);
+  height: 85vh;
+  background: linear-gradient(white 55%, #f4f4f4 45%);
+  margin-top: 50px;
 `;
 
 const Title = styled.div`
@@ -18,30 +19,32 @@ const Title = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
-  width: 100%;
-  transform: translateY(20%);
+  max-width: 1280px;
+  height: 550px;
+  margin-top: 50px;
 `;
 
 const Container = styled.div`
   position: relative;
   display: flex;
-  flex-grow: 1;
-  align-items: end;
+  flex: 1;
   padding-left: 4px;
   transition: all 300ms ease-in-out;
   &:hover {
-    flex-grow: 4;
+    flex: 2;
   }
 `;
 
 const Img = styled.img`
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: pink;
 `;
 
 const Description = styled.div`
   position: absolute;
-  padding: 0 45px 60px 45px;
+  bottom: 0;
+  padding: 0 45px 40px 25px;
   width: 100%;
 `;
 
@@ -51,6 +54,7 @@ const Top = styled.div`
   font-weight: bold;
   padding-bottom: 10px;
   border-bottom: 1px solid white;
+  width: 100%;
 `;
 
 const Bottom = styled.div`

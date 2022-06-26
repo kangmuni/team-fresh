@@ -1,5 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons';
+
+const FacebookIcon = <FontAwesomeIcon icon={faFacebook} />;
+const YoutubeIcon = <FontAwesomeIcon icon={faYoutube} />;
 
 const Foot = styled.footer`
   background-color: #191919;
@@ -24,7 +29,36 @@ const Info = styled.div`
   font-size: 18px;
 `;
 
-const Link = styled.div``;
+const Link = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+`;
+
+const Icon = styled.div`
+  font-size: 40px;
+  margin-right: 15px;
+  cursor: pointer;
+  &:hover {
+    color: white;
+  }
+  ${(props) =>
+    props.brunch &&
+    css`
+      width: 40px;
+      height: 40px;
+      font-family: cursive;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 30px;
+      background-color: black;
+      color: #282828;
+      text-align: center;
+      font-size: 30px;
+      border-radius: 50%;
+      padding-right: 5px;
+    `}
+`;
 
 const Footer = () => {
   return (
@@ -47,7 +81,11 @@ const Footer = () => {
           <br />
           Copyrightⓒ TeamFresh Co.,Ltd. All Rights Reserved.
         </Info>
-        <Link></Link>
+        <Link>
+          <Icon>{FacebookIcon}</Icon>
+          <Icon brunch>b</Icon>
+          <Icon>{YoutubeIcon}</Icon>
+        </Link>
       </Wrapper>
     </Foot>
   );

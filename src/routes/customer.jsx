@@ -1,5 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const MenuCustomer = () => <h1></h1>;
+const Section = styled.section`
+  width: 100vw;
+  height: 100vh;
+`;
+
+const MenuCustomer = () => <Section></Section>;
 
 export default MenuCustomer;

@@ -4,7 +4,7 @@ import DaumPostcode from 'react-daum-postcode';
 import DeliveryPopup from '../components/delivery/delievery_popup';
 
 const Postcode = styled.section`
-  padding-top: 80px;
+  padding-top: 77px;
 `;
 
 const Delivery = () => {
@@ -22,9 +22,17 @@ const Delivery = () => {
     console.log(data);
   };
 
+  const width = (data) => {
+    console.log(data);
+  };
+
   return (
     <Postcode>
-      <DaumPostcode onComplete={handleComplete} onClose={handleClose} />
+      <DaumPostcode
+        onComplete={handleComplete}
+        onClose={handleClose}
+        width={width}
+      />
       {selectedAdress && (
         <DeliveryPopup zoneCode={zoneCode} roadAddress={roadAddress} />
       )}

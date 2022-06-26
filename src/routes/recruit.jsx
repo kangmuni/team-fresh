@@ -1,5 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const MenuRecruit = () => <h1></h1>;
+const Section = styled.section`
+  width: 100vw;
+  height: 100vh;
+`;
+
+const MenuRecruit = () => <Section></Section>;
 
 export default MenuRecruit;

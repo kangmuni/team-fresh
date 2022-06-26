@@ -1,5 +1,9 @@
-import React from 'react';
+import { useState } from 'react';
 import styled, { css } from 'styled-components';
+import ServiceFirst from './main_service/service_first';
+import ServiceSecond from './main_service/service_second';
+import ServiceThird from './main_service/service_third';
+import ServiceFourth from './main_service/service_fourth';
 
 const Service = styled.section`
   display: flex;
@@ -20,10 +24,6 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 30px 0;
-`;
-
-const Left = styled.div`
-  display: flex;
 `;
 
 const Buttons = styled.ul`
@@ -54,31 +54,31 @@ const Button = styled.li`
     `}
 `;
 
-const Description = styled.div`
-  align-self: center;
-`;
-
-const Text = styled.div`
-  font-size: ${(props) => props.fontSize};
-  font-weight: ${(props) => props.fontWeight};
-  color: ${(props) => props.color};
-  padding-top: 40px;
-  padding-left: 20px;
-`;
-
-const Right = styled.div``;
-
 const Img = styled.img`
   width: 80px;
-  ${(props) =>
-    props.pic &&
-    css`
-      width: 690px;
-      height: 700px;
-    `}
 `;
 
 const MainService = () => {
+  const data = [
+    { id: 1, name: 'first', value: '물류', src: '/images/icon03.png' },
+    { id: 2, name: 'second', value: '유통', src: '/images/icon04.png' },
+    { id: 3, name: 'third', value: '프랜차이즈', src: '/images/icon06.png' },
+    { id: 4, name: 'fourth', value: '보험', src: '/images/icon07.png' },
+  ];
+
+  const [component, setComponent] = useState('first');
+
+  const handleComponent = (event) => {
+    setComponent(event.target.dataset.name);
+  };
+
+  const selectComponent = {
+    first: <ServiceFirst />,
+    second: <ServiceSecond />,
+    third: <ServiceThird />,
+    fourth: <ServiceFourth />,
+  };
+
   return (
     <Service>
       <Title fontSize="23px" fontWeight="400">
@@ -89,42 +89,20 @@ const MainService = () => {
       </Title>
       <Wrapper>
         <Buttons>
-          <Button active onClick>
-            <Img src="/images/icon03.png"></Img>
-            <div>물류</div>
-          </Button>
-          <Button>
-            <Img src="/images/icon04.png"></Img>
-            <div>유통</div>
-          </Button>
-          <Button>
-            <Img src="/images/icon06.png"></Img>
-            <div>프랜차이즈</div>
-          </Button>
-          <Button>
-            <Img src="/images/icon07.png"></Img>
-            <div>보험</div>
-          </Button>
+          {data.map((data) => {
+            return (
+              <Button
+                key={data.id}
+                data-name={data.name}
+                onClick={handleComponent}
+              >
+                <Img data-name={data.name} src={data.src}></Img>
+                <div data-name={data.name}>{data.value}</div>
+              </Button>
+            );
+          })}
         </Buttons>
-        <Left>
-          <Description>
-            <Text fontSize="40px" fontWeight="900" color="#02204b">
-              상품의 관리,
-              <br />
-              보관부터 배송까지
-              <br />
-              완벽하게
-            </Text>
-            <Text fontSize="20px" color="#6d6e70">
-              이커머스 운영에 최적화된 풀필먼트 센터와 <br />
-              새벽배송망을 보유한 팀프레시의 <br />
-              이커머스 전문 물류 서비스를 제공받으세요.
-            </Text>
-          </Description>
-        </Left>
-        <Right>
-          <Img pic src="/images/main_service_img01.jpeg" />
-        </Right>
+        {component && <>{selectComponent[component]} </>}
       </Wrapper>
     </Service>
   );
