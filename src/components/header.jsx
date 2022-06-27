@@ -34,16 +34,9 @@ const Menu = styled.ul`
 `;
 
 const StyledLink = styled(Link)`
-  color: white;
   text-decoration: none;
+  color: white;
   cursor: pointer;
-  /* &:focus,
-  &:hover,
-  &:visited,
-  &:link,
-  &:active {
-    text-decoration: none;
-  } */
 `;
 
 const List = styled.li`

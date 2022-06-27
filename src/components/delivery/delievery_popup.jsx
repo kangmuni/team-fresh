@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Popup = styled.section`
@@ -6,18 +6,15 @@ const Popup = styled.section`
   flex-direction: column;
   align-items: center;
   max-width: 450px;
-  height: 80vh;
-  margin: 100px auto;
+  margin: 0 auto;
   padding: 20px;
   border: 1px solid #cccccc;
+  align-self: center;
 `;
 
 const TopBar = styled.div`
-  &:before {
-    content: '←';
-    cursor: pointer;
-  }
   display: flex;
+  align-items: center;
   width: 100%;
   padding: 30px;
   font-size: 20px;
@@ -25,6 +22,17 @@ const TopBar = styled.div`
   color: grey;
   border-bottom: 5px solid #02204b;
   margin: 10px;
+`;
+
+const Backbtn = styled.button`
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  color: grey;
+  background-color: transparent;
+  font-size: 24px;
+  padding-right: 15px;
+  text-decoration: none;
 `;
 
 const Wrapper = styled.div`
@@ -57,7 +65,7 @@ const Button = styled.button`
 
 const Bottom = styled.div`
   background-color: #e5e8ef;
-  padding: 10px;
+  padding: 20px;
   margin: 10px;
   width: 100%;
 `;
@@ -71,27 +79,43 @@ const BottomBar = styled.div`
 `;
 
 const Text = styled.div`
-  color: ${(props) => props.color};
+  color: ${(props) => (props.color ? 'red' : '#303030')};
   font-weight: ${(props) => props.fontWeight};
   font-size: ${(props) => (props.large ? '20px' : '12.5px')};
-  padding-top: 20px;
+  padding-top: ${(props) => (props.paddingTop ? '5px' : '20px')};
 `;
 
-const DeliveryPopup = ({ zoneCode, roadAddress }) => {
+const DeliveryPopup = ({
+  zoneCode,
+  roadAddress,
+  jibunAddress,
+  setSelectedAdress,
+}) => {
+  const detailAdressInput = useRef();
+
+  useEffect(() => {
+    detailAdressInput.current.focus();
+  }, []);
+
+  const handleClick = () => {
+    setSelectedAdress(false);
+  };
+
   return (
     <Popup>
       <TopBar>
-        <div>&nbsp;&nbsp;다시 주소 검색하기</div>
+        <Backbtn onClick={handleClick}> ← </Backbtn>
+        <div>다시 주소 검색하기</div>
       </TopBar>
       <Wrapper>
-        <Input value={zoneCode}></Input>
-        <Input value={roadAddress}></Input>
-        <Input></Input>
+        <Input defaultValue={zoneCode}></Input>
+        <Input defaultValue={roadAddress ? roadAddress : jibunAddress}></Input>
+        <Input type="text" ref={detailAdressInput}></Input>
       </Wrapper>
       <Button>주소입력</Button>
       <Bottom>
         <BottomBar>
-          <Text large fontWeight="bold" color="red">
+          <Text large fontWeight="bold" color paddingTop>
             배송 불가 장소 안내
           </Text>
           <Text>

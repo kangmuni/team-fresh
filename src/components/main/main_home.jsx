@@ -18,7 +18,6 @@ const Ul = styled.ul`
   display: flex;
   width: 100%;
   height: 100%;
-  /* white-space: nowrap; */
   font-size: 0;
   list-style: none;
   padding-left: 0;
@@ -32,7 +31,7 @@ const Li = styled.li`
 const Img = styled.div`
   width: 100%;
   height: 100%;
-  background-color: #0e2138;
+  background-color: rgb(0, 0, 0);
 `;
 
 const Content = styled.div`
