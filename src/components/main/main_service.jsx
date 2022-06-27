@@ -46,12 +46,12 @@ const Button = styled.li`
   height: 150px;
   background-color: #f5f5f5;
   cursor: pointer;
-  ${(props) =>
+  /* ${(props) =>
     props.active &&
     css`
       background-color: #02204b;
       color: white;
-    `}
+    `} */
 `;
 
 const Img = styled.img`
